@@ -357,6 +357,11 @@
   /* ---- Mobile refinements (<768px). Desktop (>=768px) is deliberately untouched. ---- */
   @media(max-width:767px){
     h1{font-size:clamp(28px,7.5vw,34px);}
+    /* Header CTA wrapped to 2 lines (87px tall) and bloated the header to 123px.
+       Ceilings hit the desktop values exactly at 767px, so 768px is unchanged. */
+    .cta-btn{font-size:clamp(11px,3vw,13.5px);padding:clamp(9px,2.4vw,11px) clamp(11px,3.2vw,20px);white-space:nowrap;}
+    .brand{font-size:clamp(14px,4.2vw,17px);}
+    .brand span{font-size:clamp(8px,2.6vw,10.5px);}
     /* Glow inset must stay under the page gutter (20px at 375px) or it re-escapes the viewport. */
     .portrait-ring::before{inset:-14px;}
     .hero-ctas{flex-direction:column;gap:12px;}
