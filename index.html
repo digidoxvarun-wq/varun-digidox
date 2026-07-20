@@ -371,6 +371,12 @@
     .services-grid,.bundles-grid,.process-grid,.tools-grid,.tools-logo-grid{gap:16px;}
     /* 16px minimum stops iOS zooming the page when a field is focused. */
     .form-grid input,.form-grid select,.form-grid textarea{font-size:16px;}
+    /* Flow diagram fits phone width (SVG scales ~0.53x), so viewBox labels rendered
+       at ~5.5px. Enlarge to the max the fixed node boxes allow (16px -> ~8.4px; 17px
+       overflows the boxes). SYSTEM needs !important to beat its inline font-size:9px. */
+    .flow-node-label{font-size:16px;}
+    .flow-node-sub{font-size:13px;}
+    .flow-svg text.flow-node-label[text-anchor="middle"]{font-size:16px!important;}
   }
 </style>
 </head>
