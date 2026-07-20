@@ -160,13 +160,14 @@
   .case-section{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .case-study{display:grid;grid-template-columns:0.85fr 1.15fr;gap:36px;align-items:center;padding:32px 0;border-bottom:1px solid var(--line);max-width:1200px;margin:0 auto;}
   .case-study:last-child{border-bottom:none;}
-  .case-visual{border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;justify-content:center;gap:2px;border:1px solid var(--line);position:relative;overflow:hidden;border-left-width:3px;}
+  .case-visual{border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:flex-start;gap:2px;border:1px solid var(--line);position:relative;overflow:hidden;border-left-width:3px;}
   .case-visual.g{background:linear-gradient(150deg,rgba(66,133,244,0.12),rgba(66,133,244,0.02));border-left-color:var(--blue);}
   .case-visual.m{background:linear-gradient(150deg,rgba(255,107,87,0.12),rgba(255,107,87,0.02));border-left-color:var(--coral);}
   .case-visual.s{background:linear-gradient(150deg,rgba(149,191,71,0.12),rgba(149,191,71,0.02));border-left-color:var(--green);}
   .case-visual .tag{font-family:'IBM Plex Mono';font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:10px;position:relative;z-index:1;}
   .case-visual .metric{font-family:'Space Grotesk';font-size:clamp(24px,6.5vw,34px);font-weight:700;position:relative;z-index:1;}
   .case-index{position:absolute;top:-16px;right:6px;font-family:'Space Grotesk';font-weight:700;font-size:100px;color:rgba(255,255,255,0.045);line-height:1;pointer-events:none;z-index:0;}
+  .case-visual .case-index{position:absolute;}
   /* Case visual — before/after comparison + context (enhanced) */
   .cv-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px;position:relative;z-index:1;}
   .cv-chip{font-family:'IBM Plex Mono';font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:var(--text);background:rgba(255,255,255,0.05);border:1px solid var(--line);border-radius:999px;padding:4px 10px;white-space:nowrap;flex-shrink:0;}
@@ -192,6 +193,14 @@
   .case-visual.s .bar-fill{background:linear-gradient(180deg,var(--green),rgba(149,191,71,0.2));}
   .case-visual.in-view .bar-fill{height:var(--target);}
   .cv-note{font-family:'IBM Plex Mono';font-size:9px;color:var(--muted);opacity:0.65;margin-top:10px;text-align:center;letter-spacing:0.03em;}
+  .cv-did{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);position:relative;z-index:1;}
+  .cv-did-label{font-family:'IBM Plex Mono';font-size:9.5px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:9px;}
+  .cv-did-pills{display:flex;flex-wrap:wrap;gap:7px;}
+  .cv-did-pills span{font-family:'Inter';font-size:11.5px;color:var(--text);background:rgba(255,255,255,0.04);border:1px solid var(--line);border-radius:7px;padding:5px 9px 5px 8px;display:inline-flex;align-items:center;gap:6px;}
+  .cv-did-pills span::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+  .case-visual.g .cv-did-pills span::before{background:var(--blue);}
+  .case-visual.m .cv-did-pills span::before{background:var(--coral);}
+  .case-visual.s .cv-did-pills span::before{background:var(--green);}
 
   .case-content .category{font-family:'IBM Plex Mono';font-size:11.5px;color:var(--blue);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;}
   .case-content h3{font-family:'Space Grotesk';font-size:22px;margin-bottom:14px;}
@@ -683,6 +692,10 @@
         </div>
         <div class="cv-note">Relative index &middot; before = 100</div>
       </div>
+      <div class="cv-did">
+        <div class="cv-did-label">Key moves</div>
+        <div class="cv-did-pills"><span>Search + PMax</span><span>Tighter match types</span><span>Fixed tracking</span></div>
+      </div>
     </div>
     <div class="case-content">
       <div class="category">Google Ads</div>
@@ -718,6 +731,10 @@
         </div>
         <div class="cv-note">Relative index &middot; lower is better</div>
       </div>
+      <div class="cv-did">
+        <div class="cv-did-label">Key moves</div>
+        <div class="cv-did-pills"><span>One CBO campaign</span><span>Structured ad sets</span><span>Fixed pixel + tracking</span></div>
+      </div>
     </div>
     <div class="case-content">
       <div class="category">Meta Ads</div>
@@ -752,6 +769,10 @@
           <div class="bar-col"><div class="bar-val">124</div><div class="bar-track"><div class="bar-fill" style="--target:100%"></div></div><span>After</span></div>
         </div>
         <div class="cv-note">Relative index &middot; before = 100</div>
+      </div>
+      <div class="cv-did">
+        <div class="cv-did-label">Key moves</div>
+        <div class="cv-did-pills"><span>Rebuilt checkout</span><span>Faster pages</span><span>Cleaner tracking</span></div>
       </div>
     </div>
     <div class="case-content">
